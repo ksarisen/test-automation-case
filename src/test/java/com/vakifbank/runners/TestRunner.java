@@ -12,7 +12,8 @@ import org.testng.annotations.DataProvider;
     },
     plugin = {
         "pretty",
-        "json:target/cucumber-report.json"
+        "json:target/cucumber-report.json",
+        "html:target/cucumber-html-report.html"
     }
 )
 

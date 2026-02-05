@@ -59,6 +59,26 @@
             </configuration>
         </plugin>
 
+        <plugin>
+            <groupId>net.masterthought</groupId>
+            <artifactId>maven-cucumber-reporting</artifactId>
+            <version>5.7.4</version>
+            <executions>
+                <execution>
+                    <id>cucumber-report</id>
+                    <phase>verify</phase>
+                    <goals>
+                        <goal>generate</goal>
+                    </goals>
+                    <configuration>
+                        <projectName>Web UI Automation</projectName>
+                        <outputDirectory>${project.build.directory}</outputDirectory>
+                        <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+
     </plugins>
   </build>
 

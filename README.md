@@ -18,16 +18,37 @@ This project is a Web UI Test Automation framework developed as part of a techni
 
 ## 📁 Project Structure
 
-src
-└── test
-├── java
-│ ├── pages # Page Object Model classes
-│ ├── stepdefinitions # Cucumber step definitions
-│ ├── hooks # Cucumber hooks (Before / After)
-│ ├── runners # TestRunner (TestNG + Cucumber)
-│ └── utils # DriverManager, helpers
-└── resources
-└── features # Cucumber feature files
+```text
+web-ui-automation
+├── docker-compose.yml
+├── pom.xml
+├── README.md
+└── src
+    └── test
+        ├── java
+        │   └── com
+        │       └── vakifbank
+        │           ├── hooks
+        │           │   └── Hooks.java
+        │           ├── pages
+        │           │   ├── BasePage.java
+        │           │   └── BookStorePage.java
+        │           ├── runners
+        │           │   └── TestRunner.java
+        │           ├── stepdefinitions
+        │           │   ├── AlertsSteps.java
+        │           │   ├── InvalidNavigationSteps.java
+        │           │   ├── PracticeFormSteps.java
+        │           │   └── BookStoreSteps.java
+        │           └── utils
+        │               └── DriverManager.java
+        └── resources
+            └── features
+                ├── alerts.feature
+                ├── book_store.feature
+                ├── invalid_navigation.feature
+                └── practice_form.feature
+```
 
 ---
 

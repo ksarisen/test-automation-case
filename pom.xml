@@ -62,7 +62,7 @@
         <plugin>
             <groupId>net.masterthought</groupId>
             <artifactId>maven-cucumber-reporting</artifactId>
-            <version>5.7.4</version>
+            <version>5.7.8</version>
             <executions>
                 <execution>
                     <id>cucumber-report</id>
@@ -72,13 +72,22 @@
                     </goals>
                     <configuration>
                         <projectName>Web UI Automation</projectName>
-                        <outputDirectory>${project.build.directory}</outputDirectory>
-                        <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+
+                        <!-- HTML'lerin gideceği DÜZGÜN klasör -->
+                        <outputDirectory>
+                            ${project.build.directory}/cucumber-html
+                        </outputDirectory>
+
+                        <!-- GERÇEK JSON -->
+                        <jsonFiles>
+                            <param>
+                                ${project.build.directory}/cucumber-report.json
+                            </param>
+                        </jsonFiles>
                     </configuration>
                 </execution>
             </executions>
         </plugin>
-
     </plugins>
   </build>
 

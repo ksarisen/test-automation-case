@@ -12,20 +12,14 @@ public class BookStorePage extends BasePage {
     private final String URL = "https://demoqa.com/elements";
 
     // LEFT MENU
-    private final By bookStoreApp =
-            By.xpath("//div[@class='header-text' and text()='Book Store Application']");
-    private final By bookStoreMenu =
-            By.xpath("//span[text()='Book Store']");
+    private final By bookStoreApp = By.xpath("//div[@class='header-text' and text()='Book Store Application']");
+    private final By bookStoreMenu = By.xpath("//span[text()='Book Store']");
 
     // TABLE
-    private final By bookRows =
-            By.cssSelector(".rt-tbody .rt-tr-group");
-    private final By title =
-            By.cssSelector(".rt-td:nth-child(2)");
-    private final By author =
-            By.cssSelector(".rt-td:nth-child(3)");
-    private final By publisher =
-            By.cssSelector(".rt-td:nth-child(4)");
+    private final By bookRows = By.cssSelector(".rt-tbody .rt-tr-group");
+    private final By title = By.cssSelector(".rt-td:nth-child(2)");
+    private final By author = By.cssSelector(".rt-td:nth-child(3)");
+    private final By publisher = By.cssSelector(".rt-td:nth-child(4)");
 
     public void navigateToBookStore() {
         driver.get(URL);

@@ -45,7 +45,7 @@ public class DriverManager {
                         break;
                 }
 
-                // 🔴 GRID FILE UPLOAD İÇİN ŞART
+                // GRID FILE UPLOAD İÇİN ŞART
                 remoteDriver.setFileDetector(new LocalFileDetector());
 
                 driver.set(remoteDriver);

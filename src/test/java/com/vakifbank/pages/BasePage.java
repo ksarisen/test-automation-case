@@ -59,7 +59,6 @@ public abstract class BasePage {
 
     protected void scrollIntoView(By locator) {
         WebElement element = driver.findElement(locator);
-        ((JavascriptExecutor) driver)
-                .executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 }

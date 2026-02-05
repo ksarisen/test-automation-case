@@ -8,10 +8,8 @@ public class AlertsPage extends BasePage {
     private final String URL = "https://demoqa.com/elements";
 
     // Locators 
-    private final By alertsMenu =
-            By.xpath("//span[text()='Alerts']");
-    private final By alertsHeader =
-            By.xpath("//div[@class='header-text' and text()='Alerts, Frame & Windows']");
+    private final By alertsMenu = By.xpath("//span[text()='Alerts']");
+    private final By alertsHeader = By.xpath("//div[@class='header-text' and text()='Alerts, Frame & Windows']");
 
     private final By simpleAlertBtn = By.id("alertButton");
     private final By timerAlertBtn = By.id("timerAlertButton");

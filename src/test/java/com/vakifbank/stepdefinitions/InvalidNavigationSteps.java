@@ -17,12 +17,7 @@ public class InvalidNavigationSteps {
 
     @When("user tries to click a non-existing menu item")
     public void user_tries_to_click_non_existing_menu_item() {
-        try {
-            DriverManager.getDriver().findElement(By.xpath("//span[text()='Deneme']")).click();
-            Assert.fail("Element should not exist");
-        } catch (NoSuchElementException e) {
-            // expected behaviour
-        }
+        DriverManager.getDriver().findElement(By.xpath("//span[text()='Deneme']")).click();
     }
 
     @Then("operation should fail gracefully")

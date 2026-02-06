@@ -30,23 +30,22 @@ pipeline {
     }
 
     post {
-    always {
+        always {
 
-        // Karate native HTML report
-        publishHTML(target: [
-            allowMissing: true,
-            keepAll: true,
-            reportDir: 'restful-booker-karate/karate-api/target/karate-reports',
-            reportFiles: 'karate-summary.html',
-            reportName: 'Karate API Test Report'
-        ])
+            publishHTML(target: [
+                allowMissing: true,
+                keepAll: true,
+                reportDir: 'restful-booker-karate/karate-api/target/karate-reports',
+                reportFiles: 'karate-summary.html',
+                reportName: 'Karate API Test Report'
+            ])
 
-        // Jenkins Cucumber Report (optional / bonus)
-        cucumber(
-            fileIncludePattern: '**/cucumber.json',
-            sortingMethod: 'ALPHABETICAL'
-        )
+            cucumber(
+                fileIncludePattern: '**/cucumber.json',
+                skipSteps: false,
+                sortingMethod: 'ALPHABETICAL',
+                buildStatus: 'UNSTABLE'
+            )
+        }
     }
-}
-
 }

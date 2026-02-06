@@ -16,9 +16,9 @@ Each section is implemented as an independent automation module
 test-automation-case
 ├── docker-compose.yml
 ├── README.md
-├── web-ui-automation
-├── mobile-ui-automation
-└── api-automation (planned)
+├── web-ui
+├── mobile-ui
+└── restful-booker-karate
 ```
 
 ---

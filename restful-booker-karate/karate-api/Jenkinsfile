@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     stages {
-
         stage('Checkout') {
             steps {
                 checkout scm
@@ -11,7 +10,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                dir('restful-booker-karate') {
+                dir('restful-booker-karate/karate-api') {
                     sh 'docker build -t karate-api-tests .'
                 }
             }
@@ -19,10 +18,10 @@ pipeline {
 
         stage('Run Karate Tests') {
             steps {
-                dir('restful-booker-karate') {
+                dir('restful-booker-karate/karate-api') {
                     sh '''
-                        docker run --rm \
-                        -v $WORKSPACE/restful-booker-karate/target:/app/target \
+                      docker run --rm \
+                        -v $PWD/target:/app/target \
                         karate-api-tests
                     '''
                 }
@@ -33,12 +32,11 @@ pipeline {
     post {
         always {
             publishHTML(target: [
-                reportDir: 'restful-booker-karate/target/karate-reports',
-                reportFiles: 'karate-summary.html',
-                reportName: 'Karate API Test Report',
+                allowMissing: true,
                 keepAll: true,
-                alwaysLinkToLastBuild: true,
-                allowMissing: true
+                reportDir: 'restful-booker-karate/karate-api/target/karate-reports',
+                reportFiles: 'karate-summary.html',
+                reportName: 'Karate API Test Report'
             ])
         }
     }

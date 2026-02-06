@@ -43,9 +43,9 @@ pipeline {
 
             // Jenkins Cucumber Report (soft-fail / unstable)
             cucumber(
-                fileIncludePattern: '**/cucumber.json',
-                buildStatus: 'UNSTABLE',
-                sortingMethod: 'ALPHABETICAL'
+                jsonReportDirectory: 'restful-booker-karate/karate-api/target',
+                fileIncludePattern: 'cucumber.json',
+                buildStatus: 'UNSTABLE'
             )
         }
     }
